@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width:800px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* 每个盒子 */
+.drop {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 3px solid black;
+}
+
+/* 可拖拽盒子 */
+.drag {
+    cursor: pointer;
+    width: 98px;
+    height: 98px;
+}
+
+.hold {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ccc;
+}
+
+.hovered {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
+    background-color: black;
+}

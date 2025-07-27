@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: steelblue;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+/* 第一个三角形 */
+.animate1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 50px solid;
+    border-color: #fff transparent transparent transparent;
+    animation-name: rotate1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate1 {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    25%,
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75%,
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 50px solid;
+    border-color: transparent transparent transparent #fff;
+    animation-name: rotate2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes rotate2 {
+
+    0%,
+    25% {
+        transform: rotate(0);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

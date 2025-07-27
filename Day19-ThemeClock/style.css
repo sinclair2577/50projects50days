@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* 默认模式样式 */
+:root {
+    --text-color: #000;
+    --background-color: #fff;
+    --second-color: red;
+}
+
+/* 深色模式样式 */
+.dark {
+    --text-color: #fff;
+    --background-color: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.theme-change {
+    background: transparent;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border: 0;
+    border-radius: 5px;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+/* 时间显示容器 */
+.time-container {
+    text-align: center;
+}
+
+.watch {
+    margin: 5rem auto 10rem;
+    position: relative;
+    width: 20vw;
+    height: 20vh;
+}
+
+/* 时针 */
+.watch .hour {
+    height: 3.5rem;
+    width: 0.2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transform-origin: bottom left;
+    background-color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+/* 分针 */
+.watch .minute {
+    height: 4.5rem;
+    width: 0.2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transform-origin: bottom left;
+    background-color: var(--text-color);
+    transition: 0.3s ease;
+}
+
+/* 秒针 */
+.watch .second {
+    height: 4.5rem;
+    width: 0.2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transform-origin: bottom left;
+    background-color: var(--second-color);
+    transition: 0.9s ease;
+}
+
+/* 中心点 */
+.watch .center-point {
+    border-radius: 50%;
+    width: 0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    background-color: red;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 0;
+}
+
+.watch .center-point::after {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+/* 时间 */
+.time {
+    font-size: 48px;
+    letter-spacing: 2px;
+}
+
+/* 日期 */
+.date {
+    margin-top: 1rem;
+    color: #bbb;
+    text-transform: uppercase;
+}
+
+.date .day {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    margin-left: 5px;
+    padding: 2px;
+}

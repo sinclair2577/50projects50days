@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #000;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 设置自适应最大宽度 */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* 头部导航栏 */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: 0.5s ease;
+    padding-inline: 35px;
+    padding: 10px 0;
+}
+
+/* 当滚动到一定高度时 */
+header.scroll {
+    padding: 5px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
+
+header.scroll nav {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo {
+    margin-right: auto;
+}
+
+nav .logo a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-inline: 10px;
+}
+
+nav ul li .active,
+nav ul li a:hover {
+    transition: 0.5s ease;
+    color: red;
+}
+
+
+
+/* hero内容 */
+section {
+    background: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    position: relative;
+    z-index: -2;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -10;
+}
+
+section .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+section span {
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* 文本内容 */
+.content {
+    padding: 15px;
+}
+
+.content>p {
+    color: #666;
+    line-height: 30px;
+    letter-spacing: 1px;
+}

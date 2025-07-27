@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 卡片盒子 */
+.card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 卡片封面 */
+.card-cover {
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.card-cover img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 卡片内容 */
+.card-content {
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 内容标题 */
+.content-title {
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    position: relative;
+    font-weight: bold;
+}
+
+/* 内容描述 */
+.content-desc {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.content-desc .skeleton {
+    height: 8px;
+}
+
+/* 内容信息 */
+.content-info {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* 头像 */
+.content-info .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.content-info .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.content-info .avatar .skeleton {
+    border-radius: 50%;
+}
+
+/* 个人信息 */
+.content-info .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    width: 100px;
+    height: 100%;
+    position: relative;
+    flex: 1;
+}
+
+/* 姓名 */
+.info .name {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    font-weight: bold;
+}
+
+/* 日期 */
+.info .date {
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+    color: #aaa;
+}
+
+/* 骨架 */
+.skeleton {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loaded {
+    display: block;
+}
+
+.skeleton.loaded {
+    display: none;
+}
+
+.skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%,
+            transparent 100%);
+    animation: skeleton-loading 2s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
