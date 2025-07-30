@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h2 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+/* 爱心样式 */
+.fas {
+    color: red;
+}
+
+.container span {
+    font-size: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.container span .times {
+    display: inline;
+}
+
+.container .love-me {
+    width: 300px;
+    height: 450px;
+    background: url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+/* 点赞爱心动效 */
+.love {
+    /* 让爱心不响应鼠标数据 */
+    pointer-events: none;
+    position: absolute;
+    animation: bingo 1s;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+@keyframes bingo {
+    to {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+}
