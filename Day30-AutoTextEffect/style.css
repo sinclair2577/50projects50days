@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.text {
+    transition: ease;
+}
+
+.speed-controller {
+    background: rgba(0, 0, 0, 0.2);
+    width: 150px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.speed-controller .speed {
+    display: inline-block;
+    border: 0;
+    background-color: antiquewhite;
+    width: 50px;
+    margin-left: 0.25rem;
+    padding-left: 0.5rem;
+}
+
+.speed:focus {
+    outline: none;
+}
