@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox > input:checked + label {
+  background-color: #8e44ad;
+}
+
+.checkbox > input:checked + label .ball {
+  animation: active 0.5s forwards;
+}
+
+/* 切换输入框 */
+.checkbox label {
+  width: 5rem;
+  height: 2.5rem;
+  background-color: #d0d0d0;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* 输入框内球体 */
+.checkbox label .ball {
+  margin-left: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: off 0.5s forwards;
+}
+
+.checkbox span {
+  margin-left: 1rem;
+}
+
+@keyframes active {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(1.25rem) scale(1.2);
+  }
+  100% {
+    transform: translateX(2.5rem) scale(1);
+  }
+}
+
+@keyframes off {
+  0% {
+    transform: translateX(2.5rem) scale(1);
+  }
+  50% {
+    transform: translateX(1.25rem) scale(1.2);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
