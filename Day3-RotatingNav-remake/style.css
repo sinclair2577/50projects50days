@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #333;
+  overflow-x: hidden;
+}
+/* 导航内容 */
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 2rem;
+  transition: 0.5s ease;
+  transform: translateX(-200px);
+  color: #fff;
+}
+
+nav.active {
+  transition-delay: 0.3s;
+  transform: translateX(0);
+}
+
+nav.active li:nth-child(2) {
+  transition-delay: 0.4s;
+  margin-left: 20px;
+}
+
+nav.active li:nth-child(3) {
+  transition-delay: 0.5s;
+  margin-left: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+ul li {
+  margin: 2rem auto;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #ff7979;
+  font-weight: bold;
+}
+
+ul li i {
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+/* 按钮 */
+.btns {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background-color: #ff7979;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+  z-index: 10;
+}
+
+.btns.active {
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.btns button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 30px;
+}
+
+.bars {
+  left: 70%;
+  top: 75%;
+}
+
+.times {
+  left: 25%;
+  top: 70%;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+}
+
+/* 主要内容 */
+main {
+  height: 100%;
+  max-width: 1000px;
+  padding: 5rem;
+  background-color: #fff;
+  z-index: 10;
+  transition: 0.5s ease;
+  transform-origin: left top;
+}
+
+main.active {
+  transform: rotate(-20deg);
+}
+
+main h1 {
+  margin: 0 auto;
+}
+
+main span {
+  font-style: italic;
+  color: #555;
+  font-size: 12px;
+}
+
+main p {
+  color: #333;
+  line-height: 1.5;
+}
+
+main img {
+  width: 100%;
+  object-fit: cover;
+}
