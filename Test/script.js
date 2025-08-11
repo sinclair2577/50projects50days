@@ -1,12 +1,13 @@
-const promise1 = new Promise((resolve, reject) => {
-  console.log("1");
-  resolve("3");
-  console.log("2");
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("timer");
+    resolve("success");
+  }, 1000);
 });
-
-const promise2 = promise1.then((res) => {
-  console.log(res);
+const start = Date.now();
+promise.then((res) => {
+  console.log(res, Date.now() - start);
 });
-
-console.log(promise1);
-console.log(promise2);
+promise.then((res) => {
+  console.log(res, Date.now() - start);
+});
